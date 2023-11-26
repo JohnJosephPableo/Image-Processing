@@ -1,0 +1,11 @@
+E:\Visual Code\C#\Image Processing\Image Processing\bin\Debug\Image Processing.exe.config
+E:\Visual Code\C#\Image Processing\Image Processing\bin\Debug\Image Processing.exe
+E:\Visual Code\C#\Image Processing\Image Processing\bin\Debug\Image Processing.pdb
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.csproj.AssemblyReference.cache
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.csproj.SuggestedBindingRedirects.cache
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image_Processing.Form1.resources
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image_Processing.Properties.Resources.resources
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.csproj.GenerateResource.cache
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.csproj.CoreCompileInputs.cache
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.exe
+E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.pdb
