@@ -11,12 +11,15 @@ using System.Windows.Forms;
 using WebCamLib;
 using HNUDIP;
 using ImageProcess2;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Image_Processing
 {
     public partial class Form1 : Form
     {
         Bitmap load, processed, background;
+        Device[] camera;
+        Device selected;
         public Form1()
         {
             InitializeComponent();
@@ -184,8 +187,8 @@ namespace Image_Processing
         private void subtractionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             processed = new Bitmap(load.Width, load.Height);
-            Color mygreen = Color.FromArgb(0, 255, 0);
-            int greenscale = (mygreen.R + mygreen.G + mygreen.B) / 3;
+            Color imagegreen = load.GetPixel(0, 0);
+            int greenscale = (imagegreen.R + imagegreen.G + imagegreen.B) / 3;
             int threshold = 5;
 
             for(int x = 0; x < load.Width; x++)
@@ -217,7 +220,17 @@ namespace Image_Processing
 
         private void loadCameraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            camera = DeviceManager.GetAllDevices();
+            selected = camera[0];
+            selected.ShowWindow(pictureBox1);
+            
+            
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            selected.Sendmessage();
+            pictureBox2.Image = Clipboard.GetImage();
         }
 
         private void flipHorizontalToolStripMenuItem_Click(object sender, EventArgs e)

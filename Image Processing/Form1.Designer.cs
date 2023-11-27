@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manipulateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.basicCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greyscaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +53,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.loadCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,23 +95,30 @@
             // loadImageToolStripMenuItem
             // 
             this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadImageToolStripMenuItem.Text = "Load Image";
             this.loadImageToolStripMenuItem.Click += new System.EventHandler(this.loadImageToolStripMenuItem_Click);
             // 
             // saveImageToolStripMenuItem
             // 
             this.saveImageToolStripMenuItem.Name = "saveImageToolStripMenuItem";
-            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveImageToolStripMenuItem.Text = "Save Image";
             this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.saveImageToolStripMenuItem_Click);
             // 
             // loadBackgroundToolStripMenuItem
             // 
             this.loadBackgroundToolStripMenuItem.Name = "loadBackgroundToolStripMenuItem";
-            this.loadBackgroundToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.loadBackgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadBackgroundToolStripMenuItem.Text = "Load Background";
             this.loadBackgroundToolStripMenuItem.Click += new System.EventHandler(this.loadBackgroundToolStripMenuItem_Click);
+            // 
+            // loadCameraToolStripMenuItem
+            // 
+            this.loadCameraToolStripMenuItem.Name = "loadCameraToolStripMenuItem";
+            this.loadCameraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadCameraToolStripMenuItem.Text = "Load Camera";
+            this.loadCameraToolStripMenuItem.Click += new System.EventHandler(this.loadCameraToolStripMenuItem_Click);
             // 
             // manipulateToolStripMenuItem
             // 
@@ -128,56 +138,56 @@
             // basicCopyToolStripMenuItem
             // 
             this.basicCopyToolStripMenuItem.Name = "basicCopyToolStripMenuItem";
-            this.basicCopyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.basicCopyToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.basicCopyToolStripMenuItem.Text = "Basic Copy";
             this.basicCopyToolStripMenuItem.Click += new System.EventHandler(this.basicCopyToolStripMenuItem_Click);
             // 
             // greyscaleToolStripMenuItem
             // 
             this.greyscaleToolStripMenuItem.Name = "greyscaleToolStripMenuItem";
-            this.greyscaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.greyscaleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.greyscaleToolStripMenuItem.Text = "Greyscale";
             this.greyscaleToolStripMenuItem.Click += new System.EventHandler(this.greyscaleToolStripMenuItem_Click_1);
             // 
             // colorInversionToolStripMenuItem
             // 
             this.colorInversionToolStripMenuItem.Name = "colorInversionToolStripMenuItem";
-            this.colorInversionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorInversionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.colorInversionToolStripMenuItem.Text = "Color Inversion";
             this.colorInversionToolStripMenuItem.Click += new System.EventHandler(this.colorInversionToolStripMenuItem_Click);
             // 
             // histogramToolStripMenuItem
             // 
             this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.histogramToolStripMenuItem.Text = "Histogram";
             this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
             // 
             // septToolStripMenuItem
             // 
             this.septToolStripMenuItem.Name = "septToolStripMenuItem";
-            this.septToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.septToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.septToolStripMenuItem.Text = "Sepia";
             this.septToolStripMenuItem.Click += new System.EventHandler(this.septToolStripMenuItem_Click);
             // 
             // flipVerticalToolStripMenuItem
             // 
             this.flipVerticalToolStripMenuItem.Name = "flipVerticalToolStripMenuItem";
-            this.flipVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flipVerticalToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.flipVerticalToolStripMenuItem.Text = "Flip (Vertical)";
             this.flipVerticalToolStripMenuItem.Click += new System.EventHandler(this.flipVerticalToolStripMenuItem_Click);
             // 
             // flipHorizontalToolStripMenuItem
             // 
             this.flipHorizontalToolStripMenuItem.Name = "flipHorizontalToolStripMenuItem";
-            this.flipHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flipHorizontalToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.flipHorizontalToolStripMenuItem.Text = "Flip (Horizontal)";
             this.flipHorizontalToolStripMenuItem.Click += new System.EventHandler(this.flipHorizontalToolStripMenuItem_Click);
             // 
             // subtractionToolStripMenuItem
             // 
             this.subtractionToolStripMenuItem.Name = "subtractionToolStripMenuItem";
-            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.subtractionToolStripMenuItem.Text = "Subtraction";
             this.subtractionToolStripMenuItem.Click += new System.EventHandler(this.subtractionToolStripMenuItem_Click);
             // 
@@ -242,12 +252,9 @@
             this.openFileDialog2.FileName = "openFileDialog2";
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
-            // loadCameraToolStripMenuItem
+            // timer1
             // 
-            this.loadCameraToolStripMenuItem.Name = "loadCameraToolStripMenuItem";
-            this.loadCameraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadCameraToolStripMenuItem.Text = "Load Camera";
-            this.loadCameraToolStripMenuItem.Click += new System.EventHandler(this.loadCameraToolStripMenuItem_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -301,6 +308,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.ToolStripMenuItem subtractionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadCameraToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
