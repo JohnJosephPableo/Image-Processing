@@ -12,6 +12,8 @@ using WebCamLib;
 using HNUDIP;
 using ImageProcess2;
 using static System.Net.Mime.MediaTypeNames;
+using AForge.Video;
+using AForge.Video.DirectShow;
 
 namespace Image_Processing
 {
@@ -20,6 +22,8 @@ namespace Image_Processing
         Bitmap load, processed, background;
         Device[] camera;
         Device selected;
+        FilterInfoCollection FilterInfoCollection;
+        VideoCaptureDevice VideoCaptureDevice;
         public Form1()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace Image_Processing
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -218,19 +222,20 @@ namespace Image_Processing
             pictureBox3.Image = background;
         }
 
-        private void loadCameraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            camera = DeviceManager.GetAllDevices();
-            selected = camera[0];
-            selected.ShowWindow(pictureBox1);
-            
-            
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             selected.Sendmessage();
             pictureBox2.Image = Clipboard.GetImage();
+        }
+
+     
+        private void loadCameraToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            camera = DeviceManager.GetAllDevices();
+            selected = camera[0];
+            selected.ShowWindow(pictureBox1);
+
         }
 
         private void flipHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
