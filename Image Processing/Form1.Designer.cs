@@ -51,7 +51,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.greenscaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,7 +83,8 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadImageToolStripMenuItem,
             this.saveImageToolStripMenuItem,
-            this.loadBackgroundToolStripMenuItem});
+            this.loadBackgroundToolStripMenuItem,
+            this.loadCameraToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -119,8 +120,7 @@
             this.septToolStripMenuItem,
             this.flipVerticalToolStripMenuItem,
             this.flipHorizontalToolStripMenuItem,
-            this.subtractionToolStripMenuItem,
-            this.greenscaleToolStripMenuItem});
+            this.subtractionToolStripMenuItem});
             this.manipulateToolStripMenuItem.Name = "manipulateToolStripMenuItem";
             this.manipulateToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.manipulateToolStripMenuItem.Text = "Manipulate";
@@ -242,12 +242,12 @@
             this.openFileDialog2.FileName = "openFileDialog2";
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
-            // greenscaleToolStripMenuItem
+            // loadCameraToolStripMenuItem
             // 
-            this.greenscaleToolStripMenuItem.Name = "greenscaleToolStripMenuItem";
-            this.greenscaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.greenscaleToolStripMenuItem.Text = "Greenscale";
-            this.greenscaleToolStripMenuItem.Click += new System.EventHandler(this.greenscaleToolStripMenuItem_Click);
+            this.loadCameraToolStripMenuItem.Name = "loadCameraToolStripMenuItem";
+            this.loadCameraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadCameraToolStripMenuItem.Text = "Load Camera";
+            this.loadCameraToolStripMenuItem.Click += new System.EventHandler(this.loadCameraToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -300,7 +300,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.ToolStripMenuItem subtractionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem greenscaleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadCameraToolStripMenuItem;
     }
 }
 

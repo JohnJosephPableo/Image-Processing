@@ -9,3 +9,14 @@ E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.c
 E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.csproj.CoreCompileInputs.cache
 E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.exe
 E:\Visual Code\C#\Image Processing\Image Processing\obj\Debug\Image Processing.pdb
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image Processing.csproj.AssemblyReference.cache
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image Processing.csproj.SuggestedBindingRedirects.cache
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image_Processing.Form1.resources
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image_Processing.Properties.Resources.resources
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image Processing.csproj.GenerateResource.cache
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image Processing.csproj.CoreCompileInputs.cache
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image Processing.exe
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\obj\Debug\Image Processing.pdb
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\bin\Debug\Image Processing.exe.config
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\bin\Debug\Image Processing.exe
+C:\Users\Canarium\Source\Repos\Image-Processing\Image Processing\bin\Debug\Image Processing.pdb

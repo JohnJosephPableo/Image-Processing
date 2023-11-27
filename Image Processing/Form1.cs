@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebCamLib;
+using HNUDIP;
+using ImageProcess2;
 
 namespace Image_Processing
 {
@@ -212,19 +215,9 @@ namespace Image_Processing
             pictureBox3.Image = background;
         }
 
-        private void greenscaleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loadCameraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            processed = new Bitmap(load.Width, load.Height);
-            for (int x = 0; x < load.Width; x++)
-            {
-                for (int y = 0; y < load.Height; y++)
-                {
-                    Color pix = load.GetPixel(x, y);
-                    int green = (pix.R + Math.Min(pix.G + 255, 255) + pix.B) / 3;
-                    processed.SetPixel(x, y, Color.FromArgb(green, green, green));
-                }
-            }
-            pictureBox2.Image = processed;
+
         }
 
         private void flipHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
